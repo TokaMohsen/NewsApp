@@ -2,7 +2,7 @@
 //  NewsAppTests.swift
 //  NewsAppTests
 //
-//  Created by ToqaDev on 7/30/19.
+//  Created by ToqaMohsen on 7/30/19.
 //  Copyright © 2019 Toqa. All rights reserved.
 //
 
