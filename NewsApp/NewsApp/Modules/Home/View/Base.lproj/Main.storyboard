@@ -1,24 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14835.7" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14790.5"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aC4-Ns-aer" userLabel="toolbar">
+                                <rect key="frame" x="10" y="54" width="394" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NewsApp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayI-Ze-LvP">
+                                        <rect key="frame" x="10" y="9" width="334" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sZu-tf-IEG" userLabel="filterButton">
+                                        <rect key="frame" x="354" y="5" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="sZu-tf-IEG" secondAttribute="height" multiplier="1:1" id="FcM-R9-U8w"/>
+                                        </constraints>
+                                        <state key="normal" image="filterIcon"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="sZu-tf-IEG" firstAttribute="top" secondItem="aC4-Ns-aer" secondAttribute="top" constant="5" id="3BX-hC-OIj"/>
+                                    <constraint firstAttribute="height" constant="40" id="3eK-Bx-LCb"/>
+                                    <constraint firstAttribute="trailing" secondItem="sZu-tf-IEG" secondAttribute="trailing" constant="10" id="R3O-Ym-yhb"/>
+                                    <constraint firstItem="sZu-tf-IEG" firstAttribute="leading" secondItem="ayI-Ze-LvP" secondAttribute="trailing" constant="10" id="Z20-qv-jGQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="ayI-Ze-LvP" secondAttribute="bottom" constant="10" id="aLf-je-05u"/>
+                                    <constraint firstItem="ayI-Ze-LvP" firstAttribute="leading" secondItem="aC4-Ns-aer" secondAttribute="leading" constant="10" id="qGu-iP-2Rx"/>
+                                    <constraint firstAttribute="bottom" secondItem="sZu-tf-IEG" secondAttribute="bottom" constant="5" id="td7-XJ-QSr"/>
+                                    <constraint firstItem="ayI-Ze-LvP" firstAttribute="top" secondItem="aC4-Ns-aer" secondAttribute="top" constant="9" id="xBY-Hd-GVu"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JcH-5v-YV8">
+                                <rect key="frame" x="10" y="109" width="394" height="733"/>
+                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="3bP-H7-nxl" customClass="NewsListCell" customModule="NewsApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="394" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3bP-H7-nxl" id="I3I-lM-Z33">
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="JcH-5v-YV8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="3gY-Y6-I4N"/>
+                            <constraint firstItem="aC4-Ns-aer" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="4Wx-FS-TSD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JcH-5v-YV8" secondAttribute="trailing" constant="10" id="I0G-IN-O6D"/>
+                            <constraint firstItem="aC4-Ns-aer" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="J1T-c3-g6e"/>
+                            <constraint firstItem="JcH-5v-YV8" firstAttribute="top" secondItem="aC4-Ns-aer" secondAttribute="bottom" constant="15" id="Mwv-fh-zEg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JcH-5v-YV8" secondAttribute="bottom" constant="20" id="bdN-aE-rVn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aC4-Ns-aer" secondAttribute="trailing" constant="10" id="s7k-ZM-ScV"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="filterBtn" destination="sZu-tf-IEG" id="oZL-fZ-Tf4"/>
+                        <outlet property="newsTableView" destination="JcH-5v-YV8" id="5VR-5e-Xb3"/>
+                        <outlet property="toolbarTitleText" destination="ayI-Ze-LvP" id="6tU-rA-Akw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139" y="114"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="filterIcon" width="128" height="128"/>
+    </resources>
 </document>
